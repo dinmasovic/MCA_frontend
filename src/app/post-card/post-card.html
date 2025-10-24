@@ -1,11 +1,11 @@
-<mat-card *ngFor="let post of posts" class="!bg-black !border-none" appearance="outlined">
+<mat-card *ngFor="let post of posts" class="!bg-black !border-none max-w-md mx-auto" appearance="outlined">
   <mat-card-header >
     <mat-card-title class="!text-white">{{ post.username }}</mat-card-title>
     <mat-card-subtitle class="!text-white">{{ post.created }}</mat-card-subtitle>
   </mat-card-header>
 
-  <mat-card-content>
-    <p class="text-white">{{ post.content }}</p>
+  <mat-card-content class="break-words whitespace-pre-wrap">
+    <p class="text-white break-words whitespace-pre-wrap">{{ post.content }}</p>
   </mat-card-content>
   <button *ngIf="post.username === 'user'" class="bg-blue-600 text-white  btn w-1/4 rounded-lg" (click)="deletePost(post.id)">Delete</button>
 </mat-card>
